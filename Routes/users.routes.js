@@ -3,7 +3,7 @@ var jwt = require('jsonwebtoken');
 const { userModal } = require('../Model/userModal')
 const useRouter=express.Router()
 const bcrypt=require('bcrypt')
-useRouter.get('/login',async(req,res)=>{
+useRouter.post('/login',async(req,res)=>{
     let myPlaintextPassword=req.body.password
     try{
         const users=await userModal.find({email:req.body.email})
